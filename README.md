@@ -9,7 +9,7 @@ Este projeto utiliza Laravel no backend e Vue.js no frontend.
 - PHP >= 8.x
 - Composer
 - Node.js e npm
-- Banco de dados (ex: MySQL, SQLite, etc.)
+
 
 ---
 
@@ -18,7 +18,7 @@ Este projeto utiliza Laravel no backend e Vue.js no frontend.
 ```bash
 git clone <url-do-seu-repositorio>
 cd <nome-do-projeto>
-
+```
 ## Passo 2: Instalar dependências do Laravel
 
 ```bash
