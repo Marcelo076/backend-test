@@ -16,8 +16,8 @@ Este projeto utiliza Laravel no backend e Vue.js no frontend.
 ## Passo 1: Clonar o repositório
 
 ```bash
-git clone <url-do-seu-repositorio>
-cd <nome-do-projeto>
+git clone https://github.com/Marcelo076/backend-test.git
+cd backend-test
 ```
 ## Passo 2: Instalar dependências do Laravel
 
