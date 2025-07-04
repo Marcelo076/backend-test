@@ -50,7 +50,7 @@ npm install
 ```bash
 npm run dev
  ```
-## php artisan serve
+## Inicie o servidor Laravel:
 
 ```bash
 php artisan serve
