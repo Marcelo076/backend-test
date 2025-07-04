@@ -5,10 +5,12 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use PHPUnit\Framework\Attributes\Test;
+use Inertia\Testing\AssertableInertia;
 use Tests\TestCase;
 
 class CreateContactsTest extends TestCase
 {
+    use RefreshDatabase;
     #[Test]
     public function it_should_be_able_to_create_a_new_contact(): void
     {
@@ -50,22 +52,26 @@ class CreateContactsTest extends TestCase
     }
 
     #[Test]
-    public function it_should_be_able_to_list_contacts_paginated_by_10_items_per_page(): void
+    public function it_should_be_able_to_list_contacts_paginated_by_10_items_per_page()
     {
         \App\Models\Contact::factory(20)->create();
 
         $response = $this->get('/contacts');
 
-        $response->assertStatus(200);
-
-        $response->assertViewIs('contacts.index');
-
-        $response->assertViewHas('contacts');
-
-        $contacts = $response->viewData('contacts');
-
-        $this->assertCount(10, $contacts);
+        $response->assertInertia(
+            fn(AssertableInertia $page) =>
+            $page
+                ->component('Contacts/Index') // nome do componente .vue (caminho dentro de `Pages`)
+                ->has(
+                    'contacts',
+                    fn($contacts) =>
+                    $contacts
+                        ->has('data', 10) // verifica que há 10 itens paginados
+                        ->etc()
+                )
+        );
     }
+
 
     #[Test]
     public function it_should_be_able_to_delete_a_contact(): void

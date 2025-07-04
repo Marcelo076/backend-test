@@ -1,18 +1,61 @@
-Objective:
+# Como Rodar o Projeto Laravel + Vue.js
 
-Back-end Assessment: [ ] Make all tests pass, applying the best practices of Laravel and SOLID and clean arch
+Este projeto utiliza Laravel no backend e Vue.js no frontend.
 
-Front-end Assessment: [ ] Implement a front-end using Inertia.js, Vue3 and TailwindCss for contact CRUD
+---
 
-* Plus: Feel free to implement improvements and more features as you wish, such as sending an email to the contact when that contact is deleted from the system.
+## Pré-requisitos
 
-# Installation
-1. Clone the repository
-2. Have PHP 8.3 installed on your machine, composer 2, and activate the extensions requested by composer when running "composer install"
-3. Run "Composer install"
-4. Create a .env file and paste the contents of .env.example
-5. Run the command php artisan key:generate
-6. Run the command php artisan test, solve the tests
+- PHP >= 8.x
+- Composer
+- Node.js e npm
+- Banco de dados (ex: MySQL, SQLite, etc.)
 
-7. After the test is complete, create a repository on github, and upload your resolution to the repository
-8. Send the repository link to WhatsApp +55 41 98702-5814
+---
+
+## Passo 1: Clonar o repositório
+
+```bash
+git clone <url-do-seu-repositorio>
+cd <nome-do-projeto>
+
+## Passo 2: Instalar dependências do Laravel
+
+```bash
+composer install
+ ```
+## Passo 3: Configurar o arquivo .env
+
+```bash
+cp .env.example .env
+ ```
+## Passo 4: Gerar a chave do aplicativo
+
+```bash
+php artisan key:generate
+ ```
+## Passo 5: Rodar as migrations (criar tabelas no banco)
+
+```bash
+php artisan migrate
+ ```
+
+## Passo 6: Instalar dependências do frontend (Vue.js)
+
+```bash
+npm install
+ ```
+## Passo 7: Rodar o compilador do Vue.js
+
+```bash
+npm run dev
+ ```
+## php artisan serve
+
+```bash
+php artisan serve
+ ```
+
+##  O servidor Laravel estará disponível em:
+http://localhost:8000
+
